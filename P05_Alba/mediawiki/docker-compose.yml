@@ -1,0 +1,27 @@
+version: '3'
+services:
+  mediawiki:
+    image: mediawiki
+    container_name: miwiki_alba
+    restart: always
+    ports:
+      - 8080:80
+    links:
+      - database
+    volumes:
+      - images:/var/www/html/images
+  database:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_DATABASE: mariadb_db
+      MYSQL_USER: alba
+      MYSQL_PASSWORD: 1234
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  images:
+  db:
+    

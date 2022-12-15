@@ -1,0 +1,13 @@
+version: '3.1' 
+services: 
+    app: 
+        image: sdelements/lets-chat 
+        links: 
+            - mongo 
+        ports: 
+            - 8080:8080 
+            - 5222:5222 
+            
+    mongo: 
+        image: mongo:5.0.14    
+    
