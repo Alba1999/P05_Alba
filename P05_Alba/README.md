@@ -1,27 +1,38 @@
 # P05 -  Despliegue de escenarios multicontenedor con Docker Compose
 
+### :memo: Datos:
+Los user son: alba (salvo en Adminer) :pushpin:\
+Las password son: 1234 :pushpin:
 
-## Los user son: alba
-## Las password son: 1234
+### :bulb: Info usada:
+- Los apuntes de clase
+- https://hub.docker.com/_/mediawiki
 
 
-1. Servidor Apache
- - Tomamos como base la imagen de Apache (httpd)
- - Cambiamos el `volumes` y le podemos la siguiente línea `C:/html:/var/www/html` que permite abrir y mostar la página de inicio de Apache.
+### :one: Servidor Apache:
+ Tomamos como base la imagen de Apache (httpd).\
+ Cambiamos el `volumes` y le podemos la siguiente línea `.:/html:/var/www/html`.\
+ Lo abrimos en el buscador que nos mostrará la página de inicio de Apache.
 
-2. Mediawiki
- - Tomamos como base la imagen Mediawiki 
- - Modificamos los datos (user, password y db)
- - Una vez accedido con los datos descargamos el archivo localsettings
- - Copiamos el archivo `LocalSettings.php` dentro de la carpeta onde tenemos el mediawiki.yml 
- - Hacemos un cp del `Local.Setting.php` en la ruta: `/var/www/html`
- - Desde la web de Mediawiki abrimos la guia  
+### :two: Mediawiki
+Tomamos como base la imagen Mediawiki.\
+Modificamos los datos (user, password y db).\
+Una vez accedido con los datos descargamos el archivo localsettings.\
+Copiamos el archivo `LocalSettings.php` dentro de la carpeta onde tenemos el mediawiki.yml.\
+Hacemos un cp del `Local.Setting.php` en la ruta: `/var/www/html`.\
+Desde la web de Mediawiki abrimos la guia.
 
-3. Guestbook
+### :three: Guestbook
+Tomamos el código de DockerHub de Guestbook.\
+Modificamos el código (container name).\
+Lo abrimos en el buscador.
 
-4. Wordpress
-- Tomamos como base la imagen de Wordpress
-- Modificamos los datos de la bbdd 
-- Añadimos los temas y pluggins en `volumes`
+### :four: Wordpress
+Tomamos el código de DockerHub de Wordpress.\
+Modificamos los datos de la bbdd (intentamos poner los pluggings pero creemos que eso daba incompatibilidad con la bbdd).\
+Lo abrimos en el buscador.
 
-5. Adminer
+### :five: Adminer
+Tomamos el código de DockerHub de Adminer.\
+Lo abrimos en el buscador.\
+Cuando nos solicite el usuario ponemos root.
